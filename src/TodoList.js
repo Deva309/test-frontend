@@ -5,13 +5,13 @@ const TodoList = () => {
   const [newTodo, setNewTodo] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:4000/api/todos')
+    fetch('/api/todos')
       .then((response) => response.json())
       .then((data) => setTodos(data));
   }, []);
 
   const handleAddTodo = () => {
-    fetch('http://localhost:4000/api/todos', {
+    fetch('/api/todos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
